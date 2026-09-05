@@ -1,58 +1,98 @@
-# ★ BLACKSTAR RADIO 2.0
+<div align="center">
+
+<img src="./assets/blackstar-header.svg" width="100%" alt="BLACKSTAR RADIO 2.0">
+
+<br>
+
+<img src="./assets/on-air.svg" width="220" alt="ON AIR">
+
+<br><br>
+
+<img src="./assets/equalizer.svg" width="720" alt="Animated Equalizer">
+
+<br>
+
+### `SEVEN STATIONS // ONE SIGNAL // ZERO FAKE DATA`
+
+![React](https://img.shields.io/badge/React-19-000000?style=for-the-badge\&logo=react\&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-Vinext-000000?style=for-the-badge\&logo=vite)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-Workers-000000?style=for-the-badge\&logo=cloudflare)
+![Spotify](https://img.shields.io/badge/Spotify-OAuth-000000?style=for-the-badge\&logo=spotify)
+![Discord](https://img.shields.io/badge/Discord-OAuth-000000?style=for-the-badge\&logo=discord)
+
+<br>
+
+### ★ BY HIMBI FOR JOSHI ★
+
+<img src="./assets/divider.svg" width="100%" alt="divider">
+
+</div>
+
+# ⚡ BLACKSTAR RADIO 2.0
+
+> [!IMPORTANT]
+> **Eigenständiges responsives Webprojekt mit React 19, Vinext/Vite und Cloudflare Worker.**
+>
+> Die bestehende Base44-Seite wird **nicht verändert**.
+
+```text id="hcxygx"
+╔══════════════════════════════════════════════╗
+║             BLACKSTAR NETWORK                ║
+╠══════════════════════════════════════════════╣
+║  RADIO        ● ONLINE / OFFLINE REAL DATA  ║
+║  SPOTIFY      ● OAUTH                       ║
+║  DISCORD      ● COMMUNITY                   ║
+║  WORKER       ● CLOUDFLARE                  ║
+║  FAKE DATA    ● DISABLED                    ║
+╚══════════════════════════════════════════════╝
+```
 
 <div align="center">
 
-```text
-██████╗ ██╗      █████╗  ██████╗██╗  ██╗███████╗████████╗ █████╗ ██████╗
-██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝██╔════╝╚══██╔══╝██╔══██╗██╔══██╗
-██████╔╝██║     ███████║██║     █████╔╝ ███████╗   ██║   ███████║██████╔╝
-██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ╚════██║   ██║   ██╔══██║██╔══██╗
-██████╔╝███████╗██║  ██║╚██████╗██║  ██╗███████║   ██║   ██║  ██║██║  ██║
-╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝
-```
-
-### 📻 RADIO 2.0
-
-**SEVEN STATIONS · ONE SIGNAL · ZERO FAKE DATA**
-
-`React 19` · `Vinext / Vite` · `Cloudflare Workers` · `Spotify OAuth` · `Discord OAuth`
-
-**BY HIMBI FOR JOSHI**
+<img src="./assets/equalizer-small.svg" width="500" alt="frequency">
 
 </div>
 
 ---
 
-> [!IMPORTANT]
-> **BlackStar Radio 2.0 ist ein eigenständiges, responsives Webprojekt.**
-> Die bestehende Base44-Seite wird **nicht verändert**.
+# 🚀 SCHNELLSTART
 
-## ⚡ QUICK START
-
-### Voraussetzungen
-
-* **Node.js ≥ 22.13**
-* **npm**
-
-```bash
+```bash id="x20p30"
 npm ci
 cp .env.example .env
 npm run dev
 ```
 
-> **Windows PowerShell**
->
-> ```powershell
-> Copy-Item .env.example .env
-> ```
+### Voraussetzung
 
-Danach die im Terminal angezeigte lokale URL öffnen.
+```text id="ajmlh4"
+NODE.JS  >= 22.13
+NPM      INSTALLED
+SIGNAL   READY
+```
 
-Ohne Zugangsdaten funktioniert die komplette Benutzeroberfläche. Radio-Streams und externe Integrationen zeigen dabei bewusst **ehrliche Offline- bzw. Leerzustände**.
+### Windows PowerShell
 
-### 🔧 Checks & Production Build
+```powershell
+Copy-Item .env.example .env
+```
 
-```bash
+Die im Terminal angezeigte lokale URL öffnen.
+
+Ohne Zugangsdaten läuft die komplette Oberfläche weiter.
+
+```text id="8s97nx"
+╭───────────────────────────────────╮
+│ NO STREAM?     → OFFLINE STATE    │
+│ NO SPOTIFY?    → EMPTY STATE      │
+│ NO DISCORD?    → EMPTY STATE      │
+│ FAKE DATA?     → NEVER            │
+╰───────────────────────────────────╯
+```
+
+### BUILD / TEST / START
+
+```bash id="0psnec"
 npx tsc --noEmit
 node --experimental-strip-types --test tests/session.test.ts
 npm run build
@@ -60,82 +100,96 @@ npm start
 ```
 
 > [!NOTE]
-> `npm start` startet den gebauten Worker lokal über **Wrangler**.
+> `npm start` startet den gebauten Worker lokal über Wrangler.
 
-Für Produktion wird ein **Cloudflare-kompatibler Worker-Host** benötigt. BlackStar Radio 2.0 ist **kein rein statischer Export**.
+Produktion benötigt einen **Cloudflare-kompatiblen Worker-Host**.
 
-Sites-Metadaten befinden sich unter:
+BlackStar Radio 2.0 ist **kein statischer HTML-Export**.
 
-```text
+```text id="tnnyfe"
 .openai/hosting.json
 ```
 
-Secrets ausschließlich als **Laufzeitvariablen beim Host** konfigurieren.
+enthält die Hosting-Metadaten.
 
-```text
-❌ Niemals Secrets in Git committen
-❌ Niemals Secrets in den Client-Build schreiben
-❌ Niemals OAuth-Tokens im Browser speichern
+### 🔐 SECRET RULE
+
+```text id="94b4b9"
+╔══════════════════════════════════╗
+║  NEVER COMMIT SECRETS           ║
+║  NEVER SHIP TOKENS              ║
+║  NEVER EXPOSE CLIENT SECRETS    ║
+╚══════════════════════════════════╝
 ```
 
-Für lokalen Wrangler-Betrieb kann `.env` gegebenenfalls als ignorierte `.dev.vars` bereitgestellt werden.
+<div align="center">
 
----
+<img src="./assets/divider.svg" width="100%" alt="divider">
 
-# 📡 RADIO ENGINE
+</div>
 
-```text
-┌──────────────────────────────────────┐
-│          BLACKSTAR SIGNAL            │
-├──────────────────────────────────────┤
-│  STREAM     → HTTPS AUDIO            │
-│  METADATA   → NOW PLAYING API        │
-│  PLAYER     → USER INTERACTION       │
-└──────────────────────────────────────┘
+# 📻 RADIO
+
+<div align="center">
+
+<img src="./assets/radio-wave.svg" width="800" alt="radio wave">
+
+### `◀◀  BLACKSTAR SIGNAL  ▶▶`
+
+</div>
+
+Für jeden Sender die passende `STREAM_*`-Variable auf eine öffentliche HTTPS-Audio-URL setzen.
+
+### Unterstützt
+
+```text id="x3hkdl"
+MP3  ███████████████████  READY
+AAC  ███████████████████  READY
+HLS  ░░░░░░░░░░░░░░░░░░░  NOT USED
 ```
 
-Für jeden Sender wird die entsprechende `STREAM_*`-Variable auf eine **öffentliche HTTPS-Audio-URL** gesetzt.
-
-Unterstützt werden direkte:
-
-* MP3-Streams
-* AAC-Streams
-
-Nicht vorgesehen sind HLS-Manifeste.
-
-Der jeweilige Browser muss den verwendeten Codec unterstützen.
+Keine Zugangsdaten in Stream-URLs.
 
 > [!WARNING]
-> Keine Zugangsdaten in Stream-URLs einbauen.
-> Eine Stream-URL ist technisch bedingt öffentlich sichtbar.
-
-### ▶ Playback
-
-Es gibt **keinen automatischen Start**.
-
-Die Wiedergabe beginnt ausschließlich durch eine Benutzeraktion.
-
-```text
-PLAY        → Stream startet
-PAUSE       → Stream pausiert
-STATION ↔   → Wiedergabe pausiert
-VOLUME      → regelbar
-MUTE        → unterstützt
-```
-
-Play/Pause, Lautstärke und Stummschalten funktionieren auf Desktop- und Mobilgeräten.
-
-Auf iOS kann das Betriebssystem die Systemlautstärke erzwingen.
+> Die Audio-Stream-URL ist technisch bedingt öffentlich sichtbar.
 
 ---
 
-## 🎵 NOW PLAYING
+## ▶ PLAYER
 
-Die `NOW_PLAYING_*`-Variablen können auf optionale serverseitige HTTPS-Endpunkte zeigen.
+```text id="4k2r1j"
+╔════════════════════════════════════════╗
+║              NOW PLAYING               ║
+╠════════════════════════════════════════╣
+║ ▶ PLAY                                 ║
+║ ❚❚ PAUSE                               ║
+║ 🔊 VOLUME                              ║
+║ 🔇 MUTE                                ║
+║ ↔ SWITCH STATION                       ║
+╚════════════════════════════════════════╝
+```
 
-Erwartetes JSON:
+Es gibt **keinen Autoplay-Start**.
 
-```json
+Wiedergabe startet erst durch Klick.
+
+Senderwechsel pausiert die laufende Wiedergabe.
+
+Auf iOS kann das Betriebssystem die Systemlautstärke übernehmen.
+
+<div align="center">
+
+<img src="./assets/equalizer.svg" width="700" alt="Animated Equalizer">
+
+</div>
+
+---
+
+# 🎵 NOW PLAYING
+
+Die `NOW_PLAYING_*`-Variablen können auf HTTPS-Metadaten-Endpunkte zeigen.
+
+```json id="ur3r0m"
 {
   "title": "Tracktitel",
   "artist": "Interpret",
@@ -145,56 +199,116 @@ Erwartetes JSON:
 }
 ```
 
-Metadaten werden alle **30 Sekunden** aktualisiert.
+Abruf:
 
-Im Player können dadurch angezeigt werden:
+```text id="x3idcw"
+00 SEC  ● FETCH
+10 SEC  ─────────
+20 SEC  ─────────
+30 SEC  ● FETCH
+60 SEC  ● FETCH
+```
 
-`TRACK` · `ARTIST` · `COVER` · `DJ` · `SHOW`
+Aktualisierung alle **30 Sekunden**.
 
-> [!NOTE]
-> Die Audio-Wellen sind eine **dekorative Wiedergabeanzeige** und kein gemessenes Audiospektrum.
+Angezeigt werden:
 
-Es werden ausdrücklich **keine erfundenen Live-Hörerzahlen** erzeugt.
+```text id="75zrp7"
+TRACK   ███████████████
+ARTIST  ███████████████
+COVER   ███████████████
+DJ      ███████████████
+SHOW    ███████████████
+```
 
-Die Now-Playing-Quelle des Radios ist außerdem vollständig von den persönlichen Spotify-Tracks getrennt.
+> Die Audio-Wellen sind dekorativ.
+>
+> Sie stellen **kein gemessenes Audiospektrum** dar.
+
+### Keine Fake-Stats
+
+```text id="26u8j8"
+FAKE LISTENERS ............ DISABLED
+FAKE TRACKS ............... DISABLED
+FAKE DJS .................. DISABLED
+FAKE ONLINE COUNTS ........ DISABLED
+```
+
+---
+
+# 📡 THE SEVEN SIGNALS
+
+<div align="center">
+
+<img src="./assets/stations.svg" width="850" alt="BlackStar Stations">
+
+</div>
+
+```text id="ir003w"
+01  ━━━━━━━━━━━━━━━━━━━━━━━━  RAP HITS
+
+02  ━━━━━━━━━━━━━━━━━━━━━━━━  FRANCE RAP
+
+03  ━━━━━━━━━━━━━━━━━━━━━━━━  RAP CLASSICS
+
+04  ━━━━━━━━━━━━━━━━━━━━━━━━  HIP HOP RU
+
+05  ━━━━━━━━━━━━━━━━━━━━━━━━  DEUTSCH RAP
+
+06  ━━━━━━━━━━━━━━━━━━━━━━━━  OLDSCHOOL DE
+
+07  ━━━━━━━━━━━━━━━━━━━━━━━━  FRANCE DRILL
+```
+
+<div align="center">
+
+### `SEVEN FREQUENCIES`
+
+### `ONE BLACK STAR`
+
+<img src="./assets/equalizer-small.svg" width="450" alt="frequency">
+
+</div>
 
 ---
 
 # 📝 CONTENT SYSTEM
 
-Die redaktionellen Inhalte befinden sich in:
+Datei:
 
-```text
+```text id="zddu93"
 content/station.json
 ```
 
-Dort werden verwaltet:
+Darin befinden sich:
 
-* 👥 Team
-* 🗓️ Wochenprogramm
-* 📰 News
-
-### Wochentage
-
-```text
-0 → Montag
-1 → Dienstag
-2 → Mittwoch
-3 → Donnerstag
-4 → Freitag
-5 → Samstag
-6 → Sonntag
+```text id="mxvl7x"
+👥 TEAM
+🗓 PROGRAMM
+📰 NEWS
 ```
 
-Alle Uhrzeiten sind redaktionelle Angaben für:
+### DAYS
 
-**Europe/Berlin**
+```text id="wm54au"
+MONDAY      0   ███████████████
+TUESDAY     1   ███████████████
+WEDNESDAY   2   ███████████████
+THURSDAY    3   ███████████████
+FRIDAY      4   ███████████████
+SATURDAY    5   ███████████████
+SUNDAY      6   ███████████████
+```
 
-Eine automatische Stream-Umschaltung anhand des Programms findet nicht statt.
+Zeitzone:
 
-### Beispiel: Show
+```text id="06ort7"
+EUROPE / BERLIN
+```
 
-```json
+### SHOW
+
+```json id="sylruf"
 {
   "day": 0,
   "start": "20:00",
@@ -204,11 +318,9 @@ Eine automatische Stream-Umschaltung anhand des Programms findet nicht statt.
 }
 ```
 
-Das ist ausschließlich ein **Schema-Beispiel** und keine vorgefüllte echte Sendung.
+### TEAM
 
-### Beispiel: Team
-
-```json
+```json id="k5m3vy"
 {
   "name": "...",
   "role": "...",
@@ -217,9 +329,9 @@ Das ist ausschließlich ein **Schema-Beispiel** und keine vorgefüllte echte Sen
 }
 ```
 
-### Beispiel: News
+### NEWS
 
-```json
+```json id="a2gu1y"
 {
   "date": "2026-09-05",
   "type": "EVENT",
@@ -228,251 +340,206 @@ Das ist ausschließlich ein **Schema-Beispiel** und keine vorgefüllte echte Sen
 }
 ```
 
-Eigene freigegebene Bilder kommen nach:
+Eigene Bilder:
 
-```text
+```text id="t6e4pk"
 public/
 ```
 
-`LEGAL_URL` muss auf die fertige Impressum-/Datenschutzseite zeigen.
-
-> **Keine erfundenen Betreiberangaben.**
-
 ---
 
-# 🟢 SPOTIFY OAUTH
+# 🟢 SPOTIFY CONNECTION
 
-```text
+<div align="center">
+
+<img src="./assets/spotify-flow.svg" width="750" alt="Spotify OAuth">
+
+</div>
+
+```text id="tk8n8f"
 USER
  │
  ▼
 BLACKSTAR
  │
- ├──► Spotify Authorization
+ ├──────────────► SPOTIFY
  │
- ◄─── Authorization Code
+ │                │
+ │                ▼
+ │          AUTHORIZATION
+ │                │
+ ◄────────────────┘
  │
  ▼
 SERVER
  │
- ├──► Token Exchange
+ ▼
+TOKEN EXCHANGE
  │
  ▼
 ENCRYPTED SESSION
 ```
 
-### Setup
+### VARIABLES
 
-1. Anwendung im **Spotify Developer Dashboard** erstellen.
-2. Client-ID als `SPOTIFY_CLIENT_ID` setzen.
-3. Client-Secret als `SPOTIFY_CLIENT_SECRET` setzen.
-4. `APP_ORIGIN` auf die exakte HTTPS-Origin der Website setzen.
-5. Redirect-URI registrieren:
+```env id="h1wu2a"
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+APP_ORIGIN=
+SESSION_SECRET=
+```
 
-```text
+Redirect:
+
+```text id="gag29b"
 https://DEINE-DOMAIN/api/auth/spotify/callback
 ```
 
-Danach `SESSION_SECRET` mit einem kryptografisch zufälligen Wert konfigurieren.
+Secret erzeugen:
 
-Mindestens **32 Zeichen**, empfohlen sind **32 zufällige Bytes als Base64**:
-
-```bash
+```bash id="0qfx9q"
 node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 ```
 
-Anschließend auf der Website:
+Scope:
 
-```text
-Spotify verbinden → Spotify → Zustimmung → BlackStar
-```
-
-Die Anwendung fordert ausschließlich:
-
-```text
+```text id="61g9kv"
 user-read-recently-played
 ```
 
-an.
+### BLACKSTAR DOES NOT
 
-Damit werden die zuletzt gehörten Tracks mit Links zu Spotify angezeigt.
-
-### Was Spotify NICHT macht
-
-```text
-✗ keine Spotify-Volltitel als Radiosignal
-✗ kein Zugriff auf E-Mails
-✗ keine unnötigen OAuth-Scopes
-✗ keine Tokens im Local Storage
+```text id="oyuc3d"
+[✗] STREAM SPOTIFY TRACKS
+[✗] READ EMAIL
+[✗] STORE TOKENS IN LOCAL STORAGE
+[✗] REQUEST RANDOM SCOPES
+[✗] EXPOSE CLIENT SECRET
 ```
-
-Development-Mode-Konten und Freigaben im Spotify-Dashboard müssen berücksichtigt werden.
-
-Der tatsächliche API-Zugriff hängt von Spotifys jeweils aktuellen App- und Kontobedingungen ab.
-
-Lokales OAuth sollte über eine **HTTPS-Entwicklungsadresse** erfolgen, die auf den lokalen Server zeigt und exakt als Redirect registriert wurde.
-
-Unsichere Cookies werden für Entwicklung bewusst **nicht aktiviert**.
 
 ---
 
-# 🟣 DISCORD OAUTH + COMMUNITY
+# 🟣 DISCORD COMMUNITY
 
-### Setup
+<div align="center">
 
-1. Anwendung im **Discord Developer Portal** erstellen.
-2. `DISCORD_CLIENT_ID` setzen.
-3. `DISCORD_CLIENT_SECRET` serverseitig setzen.
-4. Redirect registrieren:
+<img src="./assets/discord-flow.svg" width="750" alt="Discord OAuth">
 
-```text
+</div>
+
+```env id="fufgnd"
+DISCORD_CLIENT_ID=
+DISCORD_CLIENT_SECRET=
+DISCORD_GUILD_ID=
+DISCORD_INVITE_URL=
+```
+
+Redirect:
+
+```text id="eyx14x"
 https://DEINE-DOMAIN/api/auth/discord/callback
 ```
 
-5. `DISCORD_INVITE_URL` auf euren vorhandenen Invite setzen:
+Scope:
 
-```text
-https://discord.gg/...
-```
-
-Optional:
-
-```text
-DISCORD_GUILD_ID
-```
-
-setzen und das Server-Widget im Discord-Server aktivieren.
-
-Dann kann die **reale Online-Anzahl** angezeigt werden.
-
-Eine Mitgliederliste wird nicht ausgegeben.
-
-### OAuth Scope
-
-BlackStar fragt ausschließlich:
-
-```text
+```text id="me6g1e"
 identify
 ```
 
-ab.
-
-Damit wird der verbundene Anzeigename dargestellt.
-
-```text
-✓ kein Bot-Token notwendig
-✓ kein automatischer Serverbeitritt
-✓ keine Nachrichten
-✓ kein E-Mail-Zugriff
-✓ kein Zugriff auf Guild-Listen
-✓ kein Zugriff auf Chats
+```text id="lsmyha"
+BOT TOKEN ............... NOT REQUIRED
+AUTO JOIN ............... DISABLED
+MESSAGES ................ NO ACCESS
+EMAIL ................... NO ACCESS
+CHAT .................... NO ACCESS
+GUILD LIST .............. NO ACCESS
 ```
+
+Optional kann über `DISCORD_GUILD_ID` und das öffentliche Discord-Widget eine **reale Online-Anzahl** geladen werden.
 
 ---
 
-# 🔐 SESSION & SECURITY
+# 🔐 SECURITY CORE
 
-```text
-┌─────────────────────────────────────┐
-│         SECURITY BOUNDARY           │
-├─────────────────────────────────────┤
-│ Browser                             │
-│   │                                 │
-│   └─ Encrypted HttpOnly Cookie      │
-│                 │                   │
-│                 ▼                   │
-│ Cloudflare Worker                   │
-│   │                                 │
-│   ├─ OAuth State Validation         │
-│   ├─ Token Exchange                 │
-│   ├─ Token Refresh                  │
-│   └─ Provider Requests              │
-└─────────────────────────────────────┘
+<div align="center">
+
+<img src="./assets/security-core.svg" width="800" alt="Security Core">
+
+</div>
+
+```text id="swghv8"
+               BROWSER
+                  │
+                  ▼
+         ┌────────────────┐
+         │ ENCRYPTED      │
+         │ HTTPONLY COOKIE│
+         └───────┬────────┘
+                 │
+                 ▼
+        CLOUDFLARE WORKER
+                 │
+        ┌────────┴────────┐
+        │                 │
+        ▼                 ▼
+ OAUTH VALIDATION     TOKEN REFRESH
+        │                 │
+        └────────┬────────┘
+                 ▼
+              PROVIDER
 ```
 
-Verwendet wird ein **Authorization-Code-Flow** mit:
+Security:
 
-* zufälligem OAuth-State
-* zehn Minuten gültigem verschlüsseltem State-Cookie
-* festem serverseitigem Callback
-* serverseitigem Token-Austausch
-* AES-256-GCM
-* `HttpOnly`
-* `Secure`
-* `SameSite=Lax`
-
-Tokens werden ausschließlich **serverseitig entschlüsselt**.
-
-Client-Secrets und Klartext-Tokens gelangen weder in React noch in Local Storage oder API-Antworten.
-
-API-Antworten sind nicht cachebar.
-
-Abgelaufene Tokens werden serverseitig erneuert.
-
-Eine Sitzung endet spätestens nach:
-
-```text
-7 DAYS
+```text id="5f9a80"
+AES-256-GCM          ████████████████
+HTTPONLY             ████████████████
+SECURE               ████████████████
+SAMESITE=LAX         ████████████████
+STATE VALIDATION     ████████████████
+ORIGIN CHECK         ████████████████
+NO TOKEN LOGGING     ████████████████
+NO CLIENT SECRETS    ████████████████
 ```
 
-Provider-Fehler werden kontrolliert dargestellt, ohne Geheimnisse offenzulegen.
+State-Cookie:
 
-### 🔌 Konten trennen
+```text id="m7aag8"
+TTL = 10 MINUTES
+```
 
-**„Konten auf diesem Gerät trennen“** löscht die Cookies über einen `POST` mit Origin-Prüfung.
+Session:
 
-Das entfernt die lokale Verbindung.
-
-Für einen vollständigen Widerruf muss die Anwendung zusätzlich bei Spotify bzw. Discord aus den verbundenen Anwendungen entfernt werden.
+```text id="o2a2uf"
+MAX SESSION AGE = 7 DAYS
+```
 
 > [!CAUTION]
-> Eine Änderung von `SESSION_SECRET` beendet sämtliche lokalen Sitzungen.
-
-Die aktuelle Cookie-Architektur speichert keine Tokens in einer Datenbank. Einzelne gestohlene Sitzungen können deshalb nicht zentral widerrufen werden.
-
-Für größeren Betrieb sollte auf **serverseitige Sessions mit widerrufbarer Session-ID** erweitert werden.
-
-### Security Rules
-
-```text
-[✓] Environment-Variablen nur für Betreiber
-[✓] Metadata-URLs nicht als Browser-Fetch-Ziele
-[✓] Timeouts für Provider-Requests
-[✓] Keine Redirect-Follows bei Provider-Aufrufen
-[✓] Keine OAuth-Codes in Logs
-[✓] Keine Provider-Antworten in Logs
-[✓] Keine Klartext-Tokens im Browser
-```
+> Eine Änderung von `SESSION_SECRET` beendet alle lokalen Sitzungen.
 
 ---
 
-# ⚙️ ENVIRONMENT VARIABLES
+# ⚙ ENVIRONMENT
 
-Die vollständige kopierbare Konfiguration befindet sich in:
-
-```text
+```text id="7g9t04"
 .env.example
 ```
 
-Alle Werte werden serverseitig konfiguriert.
+| Variable                | Funktion                |
+| ----------------------- | ----------------------- |
+| `APP_ORIGIN`            | HTTPS-Origin für OAuth  |
+| `SESSION_SECRET`        | Session-Verschlüsselung |
+| `SPOTIFY_CLIENT_ID`     | Spotify Client-ID       |
+| `SPOTIFY_CLIENT_SECRET` | Spotify Secret          |
+| `DISCORD_CLIENT_ID`     | Discord Client-ID       |
+| `DISCORD_CLIENT_SECRET` | Discord Secret          |
+| `DISCORD_GUILD_ID`      | Discord Widget          |
+| `DISCORD_INVITE_URL`    | Invite                  |
+| `LEGAL_URL`             | Impressum / Datenschutz |
 
-`/api/config` gibt ausschließlich **öffentliche URLs, Inhalte und Aktivierungsflags** zurück.
+### STREAMS
 
-| Variable                | Funktion                                             |
-| ----------------------- | ---------------------------------------------------- |
-| `APP_ORIGIN`            | HTTPS-Origin für OAuth                               |
-| `SESSION_SECRET`        | Geheimer Sitzungsschlüssel, mindestens 32 Zeichen    |
-| `SPOTIFY_CLIENT_ID`     | Spotify Client-ID                                    |
-| `SPOTIFY_CLIENT_SECRET` | Spotify Client-Secret                                |
-| `DISCORD_CLIENT_ID`     | Discord Client-ID                                    |
-| `DISCORD_CLIENT_SECRET` | Discord Client-Secret                                |
-| `DISCORD_GUILD_ID`      | Optionaler Discord-Server für das öffentliche Widget |
-| `DISCORD_INVITE_URL`    | Optionaler Community-Link                            |
-| `LEGAL_URL`             | Link zu rechtlichen Angaben                          |
-
-### 📻 Stream-Variablen
-
-```env
+```env id="nyn3ga"
 STREAM_RAP_HITS=
 STREAM_FRANCE_RAP=
 STREAM_RAP_CLASSICS=
@@ -482,114 +549,95 @@ STREAM_OLDSCHOOL_DE=
 STREAM_FRANCE_DRILL=
 ```
 
-Für dieselben sieben Suffixe existieren optional:
+Metadaten:
 
-```text
-NOW_PLAYING_*
+```text id="fjv655"
+NOW_PLAYING_RAP_HITS
+NOW_PLAYING_FRANCE_RAP
+NOW_PLAYING_RAP_CLASSICS
+NOW_PLAYING_HIP_HOP_RU
+NOW_PLAYING_DEUTSCH_RAP
+NOW_PLAYING_OLDSCHOOL_DE
+NOW_PLAYING_FRANCE_DRILL
 ```
 
-als Metadaten-Endpunkte.
-
 ---
 
-# 📻 THE SEVEN SIGNALS
+# 🧬 ORIGIN
 
-```text
-01 ━━━━━━━━━━━━━ RAP HITS
-02 ━━━━━━━━━━━━━ FRANCE RAP
-03 ━━━━━━━━━━━━━ RAP CLASSICS
-04 ━━━━━━━━━━━━━ HIP HOP RU
-05 ━━━━━━━━━━━━━ DEUTSCH RAP
-06 ━━━━━━━━━━━━━ OLDSCHOOL DE
-07 ━━━━━━━━━━━━━ FRANCE DRILL
+Original geprüft:
+
+```text id="rcdqe3"
+05.09.2026
 ```
 
-> **SEVEN FREQUENCIES. ONE BLACK STAR.**
-
----
-
-# 🧬 HERKUNFT & GRENZEN
-
-Das Original wurde am **05.09.2026** im Browser geprüft.
-
-Übernommen wurden:
-
-* Name **BLACK STAR / BlackStar Radio**
-* sieben Sendernamen und Genre-Untertitel
-* Social-Links
-* **„BY HIMBI FOR JOSHI“**
-
-Die Originalseite zeigt gleichzeitig `OFFLINE` und `1,9K LIVE`.
-
-Diese unbestätigte Hörerzahl wurde **bewusst nicht übernommen**.
-
-Künstlernamen der Originalseite werden ebenfalls nicht als vermeintlich aktuelle Titel ausgegeben.
-
-Himbi und Joshi erscheinen ausschließlich mit der ursprünglichen Zuschreibung und **ohne erfundene DJ-Rollen**.
-
-### Assets
-
-Es wurden keine fremden:
-
-```text
-✗ Fotografien
-✗ Cover
-✗ Original-Assetdateien
+```text id="l5orck"
+https://blackstarradio.base44.app/
 ```
 
-kopiert, da Eigentum und Nutzungsrechte nicht verifiziert waren.
+Übernommen:
 
-Die Gestaltung basiert stattdessen auf eigener Typografie, geometrischen Frequenzbalken und Lucide-UI-Icons.
+```text id="sw4smb"
+✓ BLACK STAR / BlackStar Radio
+✓ 7 Sendernamen
+✓ Genre-Untertitel
+✓ Social-Links
+✓ BY HIMBI FOR JOSHI
+```
 
-Später über Spotify eingeblendete Cover stammen aus der autorisierten API und verlinken auf den jeweiligen Track.
+Nicht übernommen:
 
-Neue Texte sind redaktionelle Entwürfe.
-
-Shows und News bleiben bis zur tatsächlichen Befüllung leer.
-
-> [!NOTE]
-> Echte Radio-Wiedergabe und vollständige OAuth-Verbindungen können erst mit realen Stream-URLs und App-Zugangsdaten vollständig geprüft werden.
-
-**Keine Zugangsdaten sind vorgegeben oder im Repository enthalten.**
-
----
-
-# 🔗 REFERENCES
-
-### Spotify
-
-* Spotify Web API — Authorization Code Flow
-* Spotify Web API — Refreshing Tokens
-
-### Discord
-
-* Discord Developer Documentation — OAuth2
+```text id="728c2l"
+✗ unbestätigte 1,9K LIVE Angabe
+✗ fremde Fotografien
+✗ fremde Cover
+✗ Original-Assets ohne geklärte Rechte
+✗ erfundene DJ-Rollen
+✗ erfundene Now-Playing-Daten
+```
 
 ---
+
+# 🛰 SIGNAL STATUS
 
 <div align="center">
 
-```text
-        ✦
-       ╱│╲
-      ╱ │ ╲
- ──── BLACK ────
-      STAR
-   RADIO 2.0
+<img src="./assets/signal-status.svg" width="700" alt="Signal Status">
 
-   SIGNAL ONLINE.
+<br>
+
+```text id="s03rl7"
+╭────────────────────────────────────────╮
+│                                        │
+│            ★ BLACKSTAR ★              │
+│                                        │
+│       BROADCAST SYSTEM 2.0             │
+│                                        │
+│       SIGNAL ███████████████           │
+│                                        │
+│       NO FAKE NUMBERS                  │
+│       NO FAKE TRACKS                   │
+│       NO FAKE COMMUNITY STATS          │
+│                                        │
+╰────────────────────────────────────────╯
 ```
 
-### BLACKSTAR RADIO 2.0
+<img src="./assets/footer-wave.svg" width="100%" alt="BlackStar Wave">
 
-**MUSIC · COMMUNITY · NO FAKE SIGNALS**
+# ★ BLACKSTAR RADIO 2.0 ★
 
-`BUILD THE SIGNAL.`
-`OWN THE FREQUENCY.`
-`STAY BLACKSTAR.`
+### `BUILD THE SIGNAL.`
+
+### `OWN THE FREQUENCY.`
+
+### `STAY BLACKSTAR.`
+
+<br>
 
 **BY HIMBI FOR JOSHI**
 
-★
+<br>
+
+<img src="./assets/equalizer.svg" width="650" alt="Animated Equalizer">
 
 </div>
